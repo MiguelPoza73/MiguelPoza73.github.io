@@ -1,0 +1,558 @@
+<!doctype html><html lang="en" data-theme="light" data-lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Miguel Poza Sánchez | Financial Crime & Risk</title><meta name="description" content="Miguel Poza Sánchez — Computer Engineering & Criminology. AML/CTF internship at the OCP of Spain’s General Council of Notaries. Madrid."><meta property="og:title" content="Miguel Poza Sánchez | Financial Crime & Risk"><meta property="og:description" content="Computer Engineering & Criminology · AML/CTF · Madrid"><meta property="og:image" content="https://miguelpoza73.github.io/assets/miguel-poza.png"><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=boska@400,500,700&display=swap" rel="stylesheet"><style>
+    :root,
+    [data-theme="light"] {
+      --color-bg: #f7f6f2;
+      --color-surface: #f9f8f5;
+      --color-surface-offset: #f3f0ec;
+      --color-border: #d4d1ca;
+      --color-text: #28251d;
+      --color-text-muted: #6f6c66;
+      --color-primary: #01696f;
+      --color-primary-hover: #0c4e54;
+      --color-primary-highlight: #d9ece9;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .05);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, .08);
+      --radius-sm: .5rem;
+      --radius-md: .85rem;
+      --radius-lg: 1.2rem;
+      --radius-full: 9999px;
+      --text-xs: clamp(.75rem, .7rem + .25vw, .875rem);
+      --text-sm: clamp(.875rem, .8rem + .35vw, 1rem);
+      --text-base: clamp(1rem, .95rem + .25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + .75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --font-body: 'Satoshi', system-ui, sans-serif;
+      --font-display: 'Boska', Georgia, serif;
+    }
+
+    [data-theme="dark"] {
+      --color-bg: #171614;
+      --color-surface: #1c1b19;
+      --color-surface-offset: #201f1d;
+      --color-border: #393836;
+      --color-text: #ece9e2;
+      --color-text-muted: #aaa59d;
+      --color-primary: #4f98a3;
+      --color-primary-hover: #66b4bf;
+      --color-primary-highlight: #253739;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, .18);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, .25);
+    }
+
+    /* Language visibility — CSS-driven, JS only sets data-lang on <html> */
+    .t-es {
+      display: none;
+    }
+
+    .t-en {
+      display: inline;
+    }
+
+    [data-lang="es"] .t-es {
+      display: inline;
+    }
+
+    [data-lang="es"] .t-en {
+      display: none;
+    }
+
+    .tb-es {
+      display: none;
+    }
+
+    .tb-en {
+      display: block;
+    }
+
+    [data-lang="es"] .tb-es {
+      display: block;
+    }
+
+    [data-lang="es"] .tb-en {
+      display: none;
+    }
+
+    .tli-es {
+      display: none;
+    }
+
+    .tli-en {
+      display: list-item;
+    }
+
+    [data-lang="es"] .tli-es {
+      display: list-item;
+    }
+
+    [data-lang="es"] .tli-en {
+      display: none;
+    }
+
+    /* Skill bubble variants (still used for tag-list bubbles in Projects) */
+    .tbub-es {
+      display: none;
+    }
+
+    .tbub-en {
+      display: inline-flex;
+    }
+
+    [data-lang="es"] .tbub-es {
+      display: inline-flex;
+    }
+
+    [data-lang="es"] .tbub-en {
+      display: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      line-height: 1.6;
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: auto;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 1000;
+      background: var(--color-primary);
+      color: white;
+      padding: .8rem 1rem;
+      border-radius: var(--radius-sm);
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: color-mix(in srgb, var(--color-bg) 82%, transparent);
+      border-bottom: 1px solid color-mix(in srgb, var(--color-text) 12%, transparent);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+      padding: .55rem .8rem;
+      border-radius: var(--radius-full);
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      background: var(--color-surface-offset);
+      color: var(--color-text);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      position: relative;
+    }
+
+    .theme-toggle,
+    .lang-toggle {
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      color: var(--color-text);
+      transition: background .2s ease;
+    }
+
+    .theme-toggle {
+      width: 44px;
+    }
+
+    .lang-toggle {
+      padding: 0 .85rem;
+      font-size: var(--text-sm);
+      font-weight: 700;
+    }
+
+    .theme-toggle:hover,
+    .lang-toggle:hover {
+      background: var(--color-border);
+    }
+
+    /* Language dropdown (select styled like lang-toggle) */
+    .lang-select {
+      height: 44px;
+      padding: 0 2rem 0 .85rem;
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      color: var(--color-text);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2328251d' stroke-width='2'><path d='M6 9l6 6 6-6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right .8rem center;
+    }
+
+    .lang-select:hover {
+      background-color: var(--color-border);
+    }
+
+    /* CV dropdown */
+    .cv-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .cv-menu {
+      position: absolute;
+      top: calc(100% + .5rem);
+      right: 0;
+      min-width: 220px;
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: .4rem;
+      display: none;
+      flex-direction: column;
+      z-index: 60;
+    }
+
+    .cv-dropdown.open .cv-menu {
+      display: flex;
+    }
+
+    .cv-menu a {
+      padding: .6rem .75rem;
+      border-radius: var(--radius-sm);
+      font-size: var(--text-sm);
+      color: var(--color-text);
+    }
+
+    .cv-menu a:hover {
+      background: var(--color-surface-offset);
+    }
+
+    .hero {
+      padding: clamp(3rem, 8vw, 7rem) 0 4rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .95fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--color-primary);
+      background: var(--color-primary-highlight);
+      padding: .5rem .8rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1.02;
+      margin-bottom: .5rem;
+    }
+
+    .hero-location {
+      display: block;
+      color: var(--color-text-muted);
+      font-size: var(--text-sm);
+      margin-bottom: 1rem;
+    }
+
+    .lead {
+      color: var(--color-text-muted);
+      max-width: 60ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .65rem;
+      min-height: 46px;
+      padding: .9rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--color-primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--color-primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: var(--color-surface);
+      color: var(--color-text);
+      border-color: color-mix(in srgb, var(--color-text) 12%, transparent);
+    }
+
+    .btn-secondary:hover {
+      background: var(--color-surface-offset);
+    }
+
+    .card,
+    .timeline-item,
+    .project-card,
+    .contact-card {
+      background: var(--color-surface);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card {
+      padding: 1.35rem;
+    }
+
+    .timeline-item,
+    .project-card {
+      padding: 1.25rem;
+    }
+
+    section {
+      padding: clamp(2.5rem, 6vw, 5rem) 0;
+    }
+
+    .section-head {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-head p {
+      color: var(--color-text-muted);
+      max-width: 62ch;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      margin-bottom: .4rem;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      margin-bottom: .35rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.2rem;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .tag {
+      font-size: var(--text-xs);
+      padding: .35rem .65rem;
+      border-radius: var(--radius-full);
+      background: var(--color-surface-offset);
+      color: var(--color-text-muted);
+      border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .timeline-item p,
+    .muted {
+      color: var(--color-text-muted);
+    }
+
+    .timeline-item ul {
+      margin-top: .6rem;
+      padding-left: 1.25rem;
+      color: var(--color-text-muted);
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: .75rem;
+    }
+
+    .contact-list a {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+
+    .site-footer {
+      padding: 2rem 0 3rem;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 920px) {
+
+      .hero-grid,
+      .projects-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .header-row {
+        flex-wrap: wrap;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+      }
+
+      nav ul {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        width: min(100% - 1rem, 1120px);
+      }
+
+      .hero-actions,
+      .header-actions {
+        width: 100%;
+      }
+
+      .hero-actions .btn,
+      .header-actions .btn {
+        width: 100%;
+      }
+    }
+  
+section{scroll-margin-top:110px}.brand{white-space:nowrap}.hero-photo{object-position:center top;width:100%;aspect-ratio:4/5;object-fit:cover}.availability{margin-top:1rem}.contact-list a{overflow-wrap:anywhere}.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.skill-grid p{color:var(--color-text-muted)}.site-footer{color:var(--color-text-muted);font-size:.85rem}@media(max-width:1100px){nav{order:3;width:100%}nav ul{justify-content:center}.header-row{flex-wrap:wrap}}@media(max-width:640px){.skill-grid{grid-template-columns:1fr}.header-actions{width:auto}nav ul{gap:.1rem}nav a{padding:.45rem}.hero-photo{width:100%;margin:auto}}@media print{.site-header,.hero-actions,.site-footer{display:none}:root{color-scheme:light}body{background:white;color:#28251d;font-size:11pt}section{padding:1rem 0}.hero{padding-top:0}.hero-grid{grid-template-columns:1.6fr .6fr}.hero-photo{max-height:220px;aspect-ratio:1;object-fit:cover}.container{width:100%}.timeline-item,.project-card,.card,.contact-card{box-shadow:none;break-inside:avoid}.projects-grid{grid-template-columns:1fr 1fr}h1{font-size:30pt}h2{font-size:19pt}h3{font-size:14pt}.btn{display:none}}
+
+.hero-photo{width:100%;max-width:360px;height:auto!important;aspect-ratio:auto!important;object-fit:contain;justify-self:center;align-self:center}@media(max-width:640px){.hero-photo{max-width:300px}}
+</style></head><body><a class="skip-link" href="#content"><span class="t-en">Skip to content</span><span class="t-es">Saltar al contenido</span></a><header class="site-header"><div class="container header-row"><a class="brand" href="#home">Miguel Poza Sánchez</a><nav aria-label="Navigation"><ul><li><a href="#experience"><span class="t-en">Experience</span><span class="t-es">Experiencia</span></a></li><li><a href="#projects"><span class="t-en">Projects</span><span class="t-es">Proyectos</span></a></li><li><a href="#education"><span class="t-en">Education</span><span class="t-es">Formación</span></a></li><li><a href="#skills"><span class="t-en">Skills</span><span class="t-es">Aptitudes</span></a></li><li><a href="#contact"><span class="t-en">Contact</span><span class="t-es">Contacto</span></a></li></ul></nav><div class="header-actions"><button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">☾</button><select class="lang-select" id="langSelect" aria-label="Language"><option value="en">English</option><option value="es">Español</option></select></div></div></header><main id="content"><section class="hero" id="home"><div class="container hero-grid"><div><span class="eyebrow">Financial Crime &amp; Risk · AML/CTF</span><h1>Miguel Poza Sánchez</h1><span class="hero-location"><span class="t-en">Madrid, Spain</span><span class="t-es">Madrid, España</span></span><p class="lead"><span class="tb-en">Final-year Double Degree student in Computer Engineering and Criminology at Universidad Rey Juan Carlos. Currently undertaking an AML/CTF internship at the OCP of Spain’s General Council of Notaries. I am interested in combining technology and analytical skills to address financial crime, fraud and risk.</span><span class="tb-es">Estudiante de último curso del doble grado en Ingeniería Informática y Criminología en la Universidad Rey Juan Carlos. Actualmente realizo prácticas en PBC/FT en el OCP del Consejo General del Notariado. Me interesa combinar tecnología y capacidad analítica para abordar el delito financiero, el fraude y los riesgos.</span></p><div class="hero-actions"><a class="btn btn-primary" href="assets/Miguel-Poza-Sanchez-CV.pdf" download><span class="t-en">Download CV</span><span class="t-es">Descargar CV</span></a><a class="btn btn-secondary" href="#contact"><span class="t-en">Contact</span><span class="t-es">Contactar</span></a></div><div class="tag-list"><span class="tag">Computer Engineering</span><span class="tag">Criminology</span><span class="tag">AML / CTF</span></div><p class="muted availability"><span class="t-en">Available for full-time roles in Madrid from summer 2027.</span><span class="t-es">Disponibilidad a jornada completa en Madrid desde verano de 2027.</span></p></div><img class="hero-photo" src="assets/miguel-poza.png" width="1254" height="1254" alt="Miguel Poza Sánchez" fetchpriority="high"></div></section><section id="experience"><div class="container"><div class="section-head"><h2><span class="t-en">Experience</span><span class="t-es">Experiencia</span></h2></div><div class="timeline"><article class="timeline-item"><h3>OCP · Consejo General del Notariado</h3><p class="muted"><span class="t-en">AML/CTF Intern · Madrid · September 2026 – Present</span><span class="t-es">Prácticas en PBC/FT · Madrid · Septiembre 2026 – Actualidad</span></p><p><span class="tb-en">Internship at the Órgano Centralizado de Prevención (OCP), in the field of anti-money laundering and counter-terrorist financing. Practical exposure to financial crime prevention, complementing my technical and criminological studies.</span><span class="tb-es">Prácticas en el Órgano Centralizado de Prevención (OCP), en el ámbito de la prevención del blanqueo de capitales y la financiación del terrorismo. Experiencia práctica en prevención del delito financiero, como complemento a mi formación tecnológica y criminológica.</span></p></article></div></div></section><section id="projects"><div class="container"><div class="section-head"><h2><span class="t-en">Projects</span><span class="t-es">Proyectos</span></h2></div><div class="projects-grid"><article class="project-card"><div class="project-top"><h3>Conversor_PDF-EPUB</h3></div><p><span class="t-en">Desktop application for converting PDF and EPUB files, developed in Python and accompanied by a user guide.</span><span class="t-es">Aplicación de escritorio para convertir archivos PDF y EPUB, desarrollada en Python y acompañada de un manual de uso.</span></p><div class="tag-list"><span class="tag">Python</span><span class="tag">PDF / EPUB</span><span class="tag">Desktop</span></div><a class="btn btn-secondary" href="https://github.com/MiguelPoza73/Conversor_PDF-EPUB" target="_blank" rel="noopener"><span class="t-en">View on GitHub ↗</span><span class="t-es">Ver en GitHub ↗</span></a></article><article class="project-card"><div class="project-top"><h3>FoxFinance</h3></div><p><span class="t-en">Personal finance application with explainable balance forecasting, budgets and spending patterns.</span><span class="t-es">Aplicación de finanzas personales con predicción explicable de saldo, presupuestos y patrones de gasto.</span></p><div class="tag-list"><span class="tag">TypeScript</span><span class="tag">Finance</span><span class="tag">Forecasting</span></div><a class="btn btn-secondary" href="https://github.com/MiguelPoza73/FoxFinance" target="_blank" rel="noopener"><span class="t-en">View on GitHub ↗</span><span class="t-es">Ver en GitHub ↗</span></a></article><article class="project-card"><div class="project-top"><h3>WebScraper</h3></div><p><span class="t-en">Tool for extracting web data and exporting it to Excel or CSV, with Python and web versions.</span><span class="t-es">Herramienta para extraer datos web y exportarlos a Excel o CSV, con versiones Python y web.</span></p><div class="tag-list"><span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">Excel / CSV</span></div><a class="btn btn-secondary" href="https://github.com/MiguelPoza73/WebScraper" target="_blank" rel="noopener"><span class="t-en">View on GitHub ↗</span><span class="t-es">Ver en GitHub ↗</span></a></article><article class="project-card"><div class="project-top"><h3>ArquipozaSite</h3></div><p><span class="t-en">Architecture portfolio website for presenting projects and visual work.</span><span class="t-es">Portfolio web de arquitectura para presentar proyectos y trabajos visuales.</span></p><div class="tag-list"><span class="tag">Orchard Core</span><span class="tag">Web</span><span class="tag">Portfolio</span></div><a class="btn btn-secondary" href="https://github.com/MiguelPoza73/ArquipozaSite" target="_blank" rel="noopener"><span class="t-en">View on GitHub ↗</span><span class="t-es">Ver en GitHub ↗</span></a></article></div></div></section><section id="education"><div class="container"><div class="section-head"><h2><span class="t-en">Education</span><span class="t-es">Formación</span></h2></div><div class="timeline"><article class="timeline-item"><h3>Universidad Rey Juan Carlos</h3><p class="muted"><span class="t-en">Computer Engineering & Criminology</span><span class="t-es">Ingeniería Informática y Criminología</span></p><p><span class="tb-en">Double Degree in Computer Engineering and Criminology. Final year; expected completion in 2027.</span><span class="tb-es">Doble Grado en Ingeniería Informática y Criminología. Último curso; finalización prevista en 2027.</span></p></article><article class="timeline-item"><h3>Università degli Studi di Roma Tor Vergata</h3><p class="muted"><span class="t-en">First semester · 2024/2025</span><span class="t-es">Primer cuatrimestre · 2024/2025</span></p><p><span class="tb-en">Erasmus+ exchange in Computer Engineering in Rome, Italy.</span><span class="tb-es">Estancia Erasmus+ en Ingeniería Informática en Roma, Italia.</span></p></article><article class="timeline-item"><h3>Óbuda University</h3><p class="muted"><span class="t-en">February – June 2026</span><span class="t-es">Febrero – Junio 2026</span></p><p><span class="tb-en">Erasmus+ exchange at the John von Neumann Faculty of Informatics in Budapest, Hungary.</span><span class="tb-es">Estancia Erasmus+ en la John von Neumann Faculty of Informatics en Budapest, Hungría.</span></p></article></div></div></section><section id="skills"><div class="container"><div class="section-head"><h2><span class="t-en">Skills & languages</span><span class="t-es">Aptitudes e idiomas</span></h2></div><div class="skill-grid"><article class="card"><h3><span class="t-en">Professional interests</span><span class="t-es">Áreas de interés</span></h3><div class="tag-list"><span class="tag">Financial Crime</span><span class="tag">AML / CTF</span><span class="tag">Fraud</span><span class="tag">Risk</span><span class="tag"><span class="t-en">Artificial Intelligence</span><span class="t-es">Inteligencia Artificial</span></span><span class="tag"><span class="t-en">Automation</span><span class="t-es">Automatización</span></span><span class="tag"><span class="t-en">Private AI models</span><span class="t-es">Modelos privados de IA</span></span></div></article><article class="card"><h3><span class="t-en">Technical background</span><span class="t-es">Formación técnica</span></h3><div class="tag-list"><span class="tag">Java</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">.NET</span><span class="tag">Orchard Core</span></div></article><article class="card"><h3><span class="t-en">Languages</span><span class="t-es">Idiomas</span></h3><div class="tag-list"><span class="tag"><span class="t-en">Spanish · Native</span><span class="t-es">Español · Nativo</span></span><span class="tag">English · B2</span><span class="tag"><span class="t-en">Italian · B2</span><span class="t-es">Italiano · B2</span></span></div></article></div></div></section><section id="contact"><div class="container"><div class="section-head"><h2><span class="t-en">Contact</span><span class="t-es">Contacto</span></h2></div><div class="contact-card"><div><p class="muted"><span class="t-en">Interested in opportunities in Financial Crime, AML/CTF, fraud and risk analysis. Available in Madrid from summer 2027.</span><span class="t-es">Interesado en oportunidades de Financial Crime, PBC/FT, fraude y análisis de riesgos. Disponible en Madrid desde verano de 2027.</span></p></div><div class="contact-list"><a href="https://www.linkedin.com/in/miguel-poza-s%C3%A1nchez-55ba49420/" target="_blank" rel="noopener">LinkedIn · Miguel Poza Sánchez ↗</a><a href="mailto:pozasanchezmiguel@gmail.com">pozasanchezmiguel@gmail.com</a><a href="tel:+34626961032">+34 626 961 032</a><a href="https://github.com/MiguelPoza73" target="_blank" rel="noopener">GitHub · MiguelPoza73 ↗</a><span>Madrid · <span class="t-en">Spain</span><span class="t-es">España</span></span></div></div></div></section> </main><footer class="site-footer"><div class="container">© 2026 Miguel Poza Sánchez · Financial Crime &amp; Risk</div></footer><script>const root=document.documentElement,theme=document.getElementById('themeBtn'),lang=document.getElementById('langSelect');theme.onclick=()=>{const dark=root.dataset.theme!=='dark';root.dataset.theme=dark?'dark':'light';theme.textContent=dark?'☀':'☾';theme.setAttribute('aria-pressed',String(dark))};lang.onchange=()=>{root.dataset.lang=lang.value;root.lang=lang.value};</script></body></html>
